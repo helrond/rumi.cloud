@@ -8,9 +8,9 @@ const options = {
   }
 };
 
-const markov = new Markov(data, options);
+let t = document.getElementById("text");
 
-document.getElementById("text").innerHTML = "Thinking...";
+const markov = new Markov(data, options);
 
 function buildCorpus() {
   markov.buildCorpus()
@@ -26,13 +26,13 @@ function generateSentence() {
     .then(shorterTweet => {
       // shorterTweet.string += ' https://github.com/scambier/markov-strings'; // Links always take 23 characters in a tweet
       if(shorterTweet.string == document.getElementById("text").innerHTML) {
-        generateText()
+        generateSentence()
       } else {
-        document.getElementById("text").innerHTML = shorterTweet.string;
+        t.innerHTML = shorterTweet.string;
       }
     });
 }
 
-document.addEventListener('DOMContentLoaded', buildCorpus, false);
+buildCorpus();
 
-document.getElementById("refresh").addEventListener("click", generateSentence);
+document.getElementById("refresh").addEventListener("click", generateSentence());
