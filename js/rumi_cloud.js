@@ -36,7 +36,7 @@ function generateSentence() {
 
 buildCorpus();
 
-document.getElementById("refresh").addEventListener("click", generateSentence());
+document.getElementById("refresh").addEventListener("click", generateSentence);
 
 },{"markov-strings":5}],2:[function(require,module,exports){
 (function (process){

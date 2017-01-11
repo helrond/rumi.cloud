@@ -35,4 +35,4 @@ function generateSentence() {
 
 buildCorpus();
 
-document.getElementById("refresh").addEventListener("click", generateSentence());
+document.getElementById("refresh").addEventListener("click", generateSentence);
